@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "5326901812",
+    "firebase_url": "https://africa-know.firebaseio.com",
+    "project_id": "africa-know",
+    "storage_bucket": "africa-know.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5326901812:android:abccd58ff3ced7356b3061",
+        "android_client_info": {
+          "package_name": "com.tinuade.africaknow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5326901812-qvaherj3g8223dkdum8ld8jpipvl30hv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tinuade.africaknow",
+            "certificate_hash": "a8322052069b6ad105956df4c105604c7af47113"
+          }
+        },
+        {
+          "client_id": "5326901812-hhv5n02aapen0k09m02hc8im7lr82a3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYxyPckL2keDeYu4diRFcO7gDqI537ojU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5326901812-hhv5n02aapen0k09m02hc8im7lr82a3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
