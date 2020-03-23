@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroudColor"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".Ui.Sign_In">
 
@@ -36,7 +35,6 @@
             android:hint="@string/prompt_email"
             android:inputType="textEmailAddress"
             android:padding="10dp"
-            android:autofillHints="@string/prompt_email"
             android:paddingStart="16dp"
             android:selectAllOnFocus="true" />
 

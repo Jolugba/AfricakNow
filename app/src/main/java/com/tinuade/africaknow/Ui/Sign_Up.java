@@ -53,6 +53,7 @@ public class Sign_Up extends AppCompatActivity {
         mConfirmPassword = findViewById(R.id.confirm_password);
         TextView mSignInLink = findViewById(R.id.signInLink);
         Button mSignUpButton = findViewById(R.id.signup);
+        loadingProgressBar.setVisibility(View.INVISIBLE);
 
         mSignInLink.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroudColor"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".Ui.Sign_Up">
 
@@ -124,13 +123,6 @@
             android:text="@string/sign_up"
             android:textColor="#fff7da" />
 
-        <ProgressBar
-            android:id="@+id/loading"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -156,6 +148,13 @@
                 android:text="@string/sign_in"
                 android:textColor="@color/buttonColor"
                 android:textStyle="bold" />
+            <ProgressBar
+                android:id="@+id/loading"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
 
         </LinearLayout>
     </LinearLayout>
