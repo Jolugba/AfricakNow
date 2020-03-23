@@ -21,16 +21,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.tinuade.africaknow.Model.User;
-import com.tinuade.africaknow.PlayGame;
 import com.tinuade.africaknow.R;
 
 public class Sign_Up extends AppCompatActivity {
+    DatabaseReference users;
     //widgets
     private EditText mFullname, mEmailAddress, mPhonenumber, mPassword, mConfirmPassword;
     private ProgressBar loadingProgressBar;
     //Firebase
     private FirebaseAuth mAuth;
-    DatabaseReference users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +39,9 @@ public class Sign_Up extends AppCompatActivity {
         FirebaseDatabase mFirebaseDatabase;
 
 
-
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        users= mFirebaseDatabase.getReference("users");
+        users = mFirebaseDatabase.getReference("users");
 
 
         //findViewById for widgets
@@ -80,7 +78,7 @@ public class Sign_Up extends AppCompatActivity {
             Toast.makeText(Sign_Up.this, "Please Enter a valid Email Address", Toast.LENGTH_LONG).show();
         } else if (TextUtils.isEmpty(mPassword.getText().toString())) {
             Toast.makeText(Sign_Up.this, "Please Enter a valid Password", Toast.LENGTH_LONG).show();
-        } else if (TextUtils.isEmpty(mPassword.getText().toString()) &&mEmailAddress.getText().toString().isEmpty()) {
+        } else if (TextUtils.isEmpty(mPassword.getText().toString()) && mEmailAddress.getText().toString().isEmpty()) {
             Toast.makeText(Sign_Up.this, "Please Enter a valid Password and Email Address", Toast.LENGTH_LONG).show();
         } else if (TextUtils.isEmpty(mConfirmPassword.getText().toString()) && !mEmailAddress.getText().toString().contains("@")) {
             Toast.makeText(Sign_Up.this, "Please Enter a valid Password", Toast.LENGTH_LONG).show();
@@ -92,46 +90,48 @@ public class Sign_Up extends AppCompatActivity {
             Toast.makeText(Sign_Up.this, "Please Enter a valid Phone Number", Toast.LENGTH_LONG).show();
         } else
             //Register User
-            loadingProgressBar.setVisibility(View.VISIBLE);
 
-           mAuth.createUserWithEmailAndPassword(mEmailAddress.getText().toString(), mPassword.getText().toString())
-                   .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                       @Override
-                       public void onSuccess(AuthResult authResult) {
-                           //save user to the database
-                           User user = new User();
-                           user.setFullName(mFullname.getText().toString());
-                           user.setEmail(mEmailAddress.getText().toString());
-                           user.setPhone(mPhonenumber.getText().toString());
 
-                           //use phone as key
+            mAuth.createUserWithEmailAndPassword(mEmailAddress.getText().toString(), mPassword.getText().toString())
+                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            //save user to the database
+                            User user = new User();
+                            user.setFullName(mFullname.getText().toString());
+                            user.setEmail(mEmailAddress.getText().toString());
+                            user.setPhone(mPhonenumber.getText().toString());
 
-                           users.child(mAuth.getCurrentUser().getUid())
-                                   .setValue(user)
-                                   .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                       @Override
-                                       public void onSuccess(Void aVoid) {
-                                           Toast.makeText(Sign_Up.this, "Registration Successful", Toast.LENGTH_LONG).show();
-                                       }
-                                   })
-                                   .addOnFailureListener(new OnFailureListener() {
-                                       @Override
-                                       public void onFailure(@NonNull Exception e) {
-                                           Toast.makeText(Sign_Up.this, "Registration Failed", Toast.LENGTH_LONG).show();
-                                       }
-                                   });
-                           loadingProgressBar.setVisibility(View.INVISIBLE);
+                            loadingProgressBar.setVisibility(View.VISIBLE);
 
-                           startActivity(new Intent(Sign_Up.this, PlayGame.class));
-                           finish();
-                       }
-                   })
-                   .addOnFailureListener(new OnFailureListener() {
-                       @Override
-                       public void onFailure(@NonNull Exception e) {
-                           Toast.makeText(Sign_Up.this, "Authentication Failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                       }
-                   });
+                            //use phone as key
+
+                            users.child(mAuth.getCurrentUser().getUid())
+                                    .setValue(user)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Toast.makeText(Sign_Up.this, "Registration Successful", Toast.LENGTH_LONG).show();
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(Sign_Up.this, "Registration Failed", Toast.LENGTH_LONG).show();
+                                        }
+                                    });
+                            loadingProgressBar.setVisibility(View.INVISIBLE);
+
+                            startActivity(new Intent(Sign_Up.this, PlayGame.class));
+                            finish();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(Sign_Up.this, "Authentication Failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
 
     }
 }

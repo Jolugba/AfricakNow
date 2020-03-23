@@ -1,8 +1,10 @@
-package com.tinuade.africaknow;
+package com.tinuade.africaknow.Ui;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.tinuade.africaknow.R;
 
 public class QuestionActivity extends AppCompatActivity {
 

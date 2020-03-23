@@ -18,7 +18,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.tinuade.africaknow.PlayGame;
 import com.tinuade.africaknow.R;
 
 public class Sign_In extends AppCompatActivity {
@@ -40,6 +39,9 @@ public class Sign_In extends AppCompatActivity {
         TextView mSignUpLink = findViewById(R.id.signUpLink);
         Button button = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+
+        loadingProgressBar.setVisibility(View.INVISIBLE);
+
 
         mSignUpLink.setOnClickListener(new View.OnClickListener() {
             @Override
