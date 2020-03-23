@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/backgroudColor"
+    android:orientation="vertical"
+    tools:context=".PlayGame">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="logo"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/splash_screen_logo"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/playGame"
+        android:layout_marginTop="50dp"
+        android:text="@string/play_game"
+        android:fontFamily="@font/arial_bold"
+        android:background="@drawable/white_btn"/>
+</LinearLayout>

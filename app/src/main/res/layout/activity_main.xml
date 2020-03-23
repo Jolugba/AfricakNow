@@ -18,7 +18,7 @@
         android:contentDescription="@string/signin"/>
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/sign_in_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -34,7 +34,7 @@
         android:selectAllOnFocus="true" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/sign_in_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -82,12 +82,14 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:id="@+id/signUpLink"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:focusable="true"
             android:fontFamily="@font/arial_bold"
             android:text="@string/signup"
-            android:textColor="#fff7da"
+            android:textColor="@color/buttonColor"
+            android:background="#fff7da"
             android:textStyle="bold" />
 
     </LinearLayout>
