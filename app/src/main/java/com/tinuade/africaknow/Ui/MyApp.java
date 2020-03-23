@@ -1,4 +1,4 @@
-package com.tinuade.africaknow;
+package com.tinuade.africaknow.Ui;
 import android.app.Application;
 import android.os.SystemClock;
 
@@ -6,6 +6,6 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        SystemClock.sleep(20000);
+        SystemClock.sleep(10000);
     }
 }
