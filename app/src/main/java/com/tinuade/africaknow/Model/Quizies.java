@@ -10,7 +10,7 @@ public class Quizies {
     @SerializedName("message")
     private String mMessage;
     @SerializedName("questions")
-    private List<Question> mQuestions;
+    private List<QuestionModel> mQuestions;
 
     public String getMessage() {
         return mMessage;
@@ -20,11 +20,11 @@ public class Quizies {
         mMessage = message;
     }
 
-    public List<Question> getQuestions() {
+    public List<QuestionModel> getQuestions() {
         return mQuestions;
     }
 
-    public void setQuestions(List<Question> questions) {
+    public void setQuestions(List<QuestionModel> questions) {
         mQuestions = questions;
     }
 

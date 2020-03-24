@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Question {
+public class QuestionModel {
 
     @SerializedName("answers")
     private List<Answer> mAnswers;
