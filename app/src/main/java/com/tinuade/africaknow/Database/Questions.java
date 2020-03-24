@@ -17,11 +17,11 @@ public class Questions {
     private String question;
 
     @NonNull
-    @ColumnInfo(name ="answer")
+    @ColumnInfo(name ="answers")
     private String answer;
 
     @NonNull
-    @ColumnInfo(name ="optA")
+    @ColumnInfo(name ="option1")
     private String optA;
 
     @NonNull
