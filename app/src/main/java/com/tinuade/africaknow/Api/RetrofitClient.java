@@ -8,10 +8,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private String BASE_URL = "https://quizzies.herokuapp.com/";
-    private ApiInterface service;
+    private static final String BASE_URL = "https://quizzies.herokuapp.com/";
+    private static ApiInterface service;
 
-    public ApiInterface getService() {
+    public static ApiInterface getService() {
 
         if (service == null) {
             Retrofit retrofit = new Retrofit.Builder()
@@ -25,7 +25,7 @@ public class RetrofitClient {
         return service;
     }
 
-    private OkHttpClient okHttpClient() {
+    private static OkHttpClient okHttpClient() {
         OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder();
         //add a logging interceptor to be able to log network request response
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();

@@ -1,11 +1,10 @@
-
 package com.tinuade.africaknow.Model;
-
-import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class QuestionModel {
+import com.google.gson.annotations.SerializedName;
+
+public class Question {
 
     @SerializedName("answers")
     private List<Answer> mAnswers;

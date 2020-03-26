@@ -1,16 +1,14 @@
-
 package com.tinuade.africaknow.Model;
 
+import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class Quizies {
+public class BaseResponse {
 
     @SerializedName("message")
     private String mMessage;
     @SerializedName("questions")
-    private List<QuestionModel> mQuestions;
+    private List<Question> mQuestions;
 
     public String getMessage() {
         return mMessage;
@@ -20,11 +18,11 @@ public class Quizies {
         mMessage = message;
     }
 
-    public List<QuestionModel> getQuestions() {
+    public List<Question> getQuestions() {
         return mQuestions;
     }
 
-    public void setQuestions(List<QuestionModel> questions) {
+    public void setQuestions(List<Question> questions) {
         mQuestions = questions;
     }
 

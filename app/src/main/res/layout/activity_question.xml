@@ -1,15 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/questionContainerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/textColor"
-    android:id="@+id/questionContainerLayout"
+    android:orientation="vertical"
     tools:context=".Ui.QuestionActivity">
-    <androidx.recyclerview.widget.RecyclerView
+
+    <TextView
+        android:id="@+id/option_3_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Question:"
+        app:layout_constraintEnd_toStartOf="@id/current_question_textView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/current_question_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/option_3_textView"
+        app:layout_constraintEnd_toStartOf="@id/option_1_textView"
+        app:layout_constraintStart_toEndOf="@+id/option_3_textView"
+        app:layout_constraintTop_toTopOf="@+id/option_3_textView"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/option_1_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        app:layout_constraintBottom_toBottomOf="@+id/current_question_textView"
+        app:layout_constraintEnd_toStartOf="@id/total_questions_textView"
+        app:layout_constraintStart_toEndOf="@+id/current_question_textView"
+        app:layout_constraintTop_toTopOf="@+id/current_question_textView" />
+
+    <TextView
+        android:id="@+id/total_questions_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/option_1_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/option_1_textView"
+        app:layout_constraintTop_toTopOf="@+id/option_1_textView"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/option_2_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: "
+        app:layout_constraintEnd_toStartOf="@id/score_textView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/option_3_textView" />
+
+    <TextView
+        android:id="@+id/score_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/option_2_textView"
+        app:layout_constraintEnd_toStartOf="@id/textView4"
+        app:layout_constraintStart_toEndOf="@id/option_2_textView"
+        app:layout_constraintTop_toTopOf="@id/option_2_textView"
+        tools:text="3" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Correct: "
+        app:layout_constraintEnd_toStartOf="@id/correct_textView"
+        app:layout_constraintStart_toEndOf="@id/score_textView"
+        app:layout_constraintTop_toBottomOf="@id/option_3_textView" />
+
+    <TextView
+        android:id="@+id/correct_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/textView4"
+        app:layout_constraintEnd_toStartOf="@id/textView5"
+        app:layout_constraintStart_toEndOf="@id/textView4"
+        app:layout_constraintTop_toTopOf="@id/textView4"
+        tools:text="3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Wrong: "
+        app:layout_constraintEnd_toStartOf="@id/wrong_textView"
+        app:layout_constraintStart_toEndOf="@id/correct_textView"
+        app:layout_constraintTop_toBottomOf="@id/option_3_textView" />
+
+    <TextView
+        android:id="@+id/wrong_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView5"
+        app:layout_constraintTop_toTopOf="@id/textView5"
+        tools:text="3" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@id/confirm_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/confirm_button"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView"/>
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

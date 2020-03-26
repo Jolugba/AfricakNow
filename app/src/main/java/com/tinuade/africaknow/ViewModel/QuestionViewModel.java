@@ -1,30 +1,28 @@
 package com.tinuade.africaknow.ViewModel;
 
-import android.app.Application;
+import com.tinuade.africaknow.Model.BaseResponse;
 
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
-import com.tinuade.africaknow.Database.QuestionRespository;
-import com.tinuade.africaknow.Database.Questions;
+public class QuestionViewModel extends ViewModel {
+    private MutableLiveData<BaseResponse> quiz = new MutableLiveData<>();
+    private MutableLiveData<Integer> correctAnswer = new MutableLiveData<>();
 
-import java.util.List;
-
-public class QuestionViewModel extends AndroidViewModel {
-
-    private QuestionRespository questionRespository;
-    private LiveData<List<Questions>> mALLQuestions;
-
-    public QuestionViewModel (Application application){
-        super(application);
-        questionRespository=new QuestionRespository(application);
-        mALLQuestions=questionRespository.getmAllQuestions();
+    public LiveData<BaseResponse> getQuiz() {
+        return quiz;
     }
 
-    public LiveData<List<Questions>> getmALLQuestions() {
-        return mALLQuestions;
+    public void setQuiz(BaseResponse quiz) {
+        this.quiz.postValue(quiz);
     }
-    protected void insert(Questions word){
-        questionRespository.insert(word);
+
+    public MutableLiveData<Integer> getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public void setCorrectAnswer(Integer correctAnswer) {
+        this.correctAnswer.postValue(correctAnswer);
     }
 }

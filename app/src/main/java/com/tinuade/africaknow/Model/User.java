@@ -1,3 +1,4 @@
+
 package com.tinuade.africaknow.Model;
 
 public class User {
