@@ -28,12 +28,15 @@ public class QuestionActivity extends AppCompatActivity {
 
     public static final String EXTRA_TEXT = "estherjolugba@yahoo.com.EXTRA_NUMBER";
     private QuestionViewModel mViewModel;
-    private TextView mTotalQuestionsTextView, mCurrentQuestionTextView;
+    private TextView mTotalQuestionsTextView, mCurrentQuestionTextView, mWrongTextView, mCorrectTextView;
     private ViewPager2 mPager2;
     private Button mNextButton;
     private int numberOfQuestions;
     private TextView mScore;
-    private int score = 1;
+
+    private int score = 0;
+    private int correct = 0;
+    private int wrong = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +46,11 @@ public class QuestionActivity extends AppCompatActivity {
         mViewModel = new ViewModelProvider(this).get(QuestionViewModel.class);
         mTotalQuestionsTextView = findViewById(R.id.total_questions_textView);
         mCurrentQuestionTextView = findViewById(R.id.current_question_textView);
+        mWrongTextView = findViewById(R.id.wrong_textView);
+        mCorrectTextView = findViewById(R.id.correct_textView);
+        mScore = findViewById(R.id.score_textView);
         mPager2 = findViewById(R.id.view_pager);
         mNextButton = findViewById(R.id.confirm_button);
-        mScore = findViewById(R.id.score_textView);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
         loadingProgressBar.setVisibility(View.INVISIBLE);
@@ -72,30 +77,38 @@ public class QuestionActivity extends AppCompatActivity {
             mPager2.setAdapter(adapter);
             loadingProgressBar.setVisibility(View.GONE);
             mNextButton.setOnClickListener(v -> {
-
                 if (QuizAdapter.isOptionSelected) {
                     if (QuizAdapter.answerValue) {
+                        score += 10;
+                        correct++;
                         Toast.makeText(QuestionActivity.this, "You are on fire Genius", Toast.LENGTH_SHORT).show();
                         String value = String.valueOf(score);
                         mScore.setText(value);
-                        mScore.setText("Score: " + score);
-                        score++;
-
+                        mCorrectTextView.setText(String.valueOf(correct));
                         if (mPager2.getCurrentItem() < baseResponse.getQuestions().size() - 1) {
-
                             mPager2.setCurrentItem(mPager2.getCurrentItem() + 1);
-
                         } else {
-
                             Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
                             intent.putExtra(EXTRA_TEXT, score);
                             startActivity(intent);
+                            finish();
                             // Quiz has ended, user has submitted
-                            //TODO: Take the user to the result page nd display user score
                         }
 
                     } else {
-                        Toast.makeText(QuestionActivity.this, "Wrong answer,Please Try again", Toast.LENGTH_SHORT).show();
+                        // User selects a wrong answer
+                        wrong ++;
+                        String value = String.valueOf(wrong);
+                        mWrongTextView.setText(value);
+                        Toast.makeText(QuestionActivity.this, "Wrong Answer", Toast.LENGTH_SHORT).show();
+                        if (mPager2.getCurrentItem() < baseResponse.getQuestions().size() - 1) {
+                            mPager2.setCurrentItem(mPager2.getCurrentItem() + 1);
+                        } else {
+                            Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
+                            intent.putExtra(EXTRA_TEXT, score);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 } else {
                     Toast.makeText(QuestionActivity.this, "Please Select an answer", Toast.LENGTH_SHORT).show();

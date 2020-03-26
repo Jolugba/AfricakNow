@@ -60,7 +60,7 @@
         android:id="@+id/option_2_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" "
+        android:text="Score: "
         app:layout_constraintEnd_toStartOf="@id/score_textView"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,14 +75,14 @@
         app:layout_constraintEnd_toStartOf="@id/textView4"
         app:layout_constraintStart_toEndOf="@id/option_2_textView"
         app:layout_constraintTop_toTopOf="@id/option_2_textView"
-        tools:text="3" />
+        android:text="0" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text=" "
+        android:text="Correct: "
         app:layout_constraintEnd_toStartOf="@id/correct_textView"
         app:layout_constraintStart_toEndOf="@id/score_textView"
         app:layout_constraintTop_toBottomOf="@id/option_3_textView" />
@@ -96,14 +96,14 @@
         app:layout_constraintEnd_toStartOf="@id/textView5"
         app:layout_constraintStart_toEndOf="@id/textView4"
         app:layout_constraintTop_toTopOf="@id/textView4"
-        tools:text="3" />
+        android:text="0" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text=" "
+        android:text="Wrong: "
         app:layout_constraintEnd_toStartOf="@id/wrong_textView"
         app:layout_constraintStart_toEndOf="@id/correct_textView"
         app:layout_constraintTop_toBottomOf="@id/option_3_textView" />
@@ -116,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/textView5"
         app:layout_constraintTop_toTopOf="@id/textView5"
-        tools:text="3" />
+        android:text="0" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
