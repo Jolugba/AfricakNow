@@ -23,18 +23,19 @@
         android:textColor="@color/textColor"
         android:textSize="20sp"
         android:textStyle="bold" />
-
     <TextView
-        android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:id="@+id/result"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/arial_bold"
         android:gravity="center"
-        android:text="Your Demo score is:  "
+        android:text="YOUR DEMO SCORE IS: "
         android:textColor="@color/textColor"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+
 
     <TextView
         android:layout_width="wrap_content"
