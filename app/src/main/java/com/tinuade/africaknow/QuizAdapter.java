@@ -5,15 +5,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.tinuade.africaknow.Model.Answer;
 import com.tinuade.africaknow.Model.Question;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
 public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder> {
+
+    public static boolean answerValue = false;
+    public static boolean isOptionSelected = false;
 
     private List<Question> mQuestionList;
 
@@ -36,6 +39,12 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
         holder.option2.setText(answers.get(1).getOption());
         holder.option3.setText(answers.get(2).getOption());
         holder.option4.setText(answers.get(3).getOption());
+
+        //set value for each option
+        holder.option1Value = answers.get(0).getValue();
+        holder.option2Value = answers.get(1).getValue();
+        holder.option3Value = answers.get(2).getValue();
+        holder.option4Value = answers.get(3).getValue();
     }
 
     @Override
@@ -45,6 +54,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
 
     static class QuizViewHolder extends RecyclerView.ViewHolder {
         TextView question, option1, option2, option3, option4;
+        boolean option1Value, option2Value, option3Value, option4Value;
 
         QuizViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +72,8 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
                     option3.setSelected(false);
                     option4.setSelected(false);
                 }
+                answerValue = option1Value;
+                isOptionSelected = true;
             });
             option2.setOnClickListener(view -> {
                 if (!option2.isSelected()) {
@@ -70,6 +82,8 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
                     option3.setSelected(false);
                     option4.setSelected(false);
                 }
+                answerValue = option2Value;
+                isOptionSelected = true;
             });
             option3.setOnClickListener(view -> {
                 if (!option3.isSelected()) {
@@ -79,6 +93,8 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
                     option4.setSelected(false);
 
                 }
+                answerValue = option3Value;
+                isOptionSelected = true;
             });
             option4.setOnClickListener(view -> {
                 if (!option4.isSelected()) {
@@ -87,6 +103,8 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
                     option2.setSelected(false);
                     option3.setSelected(false);
                 }
+                answerValue = option4Value;
+                isOptionSelected = true;
             });
         }
     }
