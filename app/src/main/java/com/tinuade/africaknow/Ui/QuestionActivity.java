@@ -75,7 +75,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                 if (QuizAdapter.isOptionSelected) {
                     if (QuizAdapter.answerValue) {
-                        Toast.makeText(QuestionActivity.this, "You are on fire Genius", Toast.LENGTH_LONG).show();
+                        Toast.makeText(QuestionActivity.this, "You are on fire Genius", Toast.LENGTH_SHORT).show();
                         String value = String.valueOf(score);
                         mScore.setText(value);
                         mScore.setText("Score: " + score);
@@ -95,10 +95,10 @@ public class QuestionActivity extends AppCompatActivity {
                         }
 
                     } else {
-                        Toast.makeText(QuestionActivity.this, "Wrong answer,Please Try again", Toast.LENGTH_LONG).show();
+                        Toast.makeText(QuestionActivity.this, "Wrong answer,Please Try again", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(QuestionActivity.this, "Please Select an answer", Toast.LENGTH_LONG).show();
+                    Toast.makeText(QuestionActivity.this, "Please Select an answer", Toast.LENGTH_SHORT).show();
                 }
 
             });
