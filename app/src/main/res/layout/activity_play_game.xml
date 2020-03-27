@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroudColor"
+    android:background="@color/colorAccent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".Ui.PlayGame">
@@ -33,6 +33,7 @@
         android:textColor="@color/textColor"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:fontFamily="@font/arial_bold"
         android:layout_marginTop="24dp"/>
 
     <androidx.recyclerview.widget.RecyclerView

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardBackgroundColor="@android:color/white"
+    app:cardBackgroundColor="@color/textColor"
     app:contentPadding="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +16,8 @@
             android:id="@+id/fullName_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/backgroudColor"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/arial_bold"
             android:textSize="20sp"
             android:textStyle="bold"
             android:maxLength="20"
@@ -30,8 +31,9 @@
             android:id="@+id/highest_score_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/backgroudColor"
+            android:textColor="@color/colorAccent"
             android:textSize="20sp"
+            android:fontFamily="@font/arial_bold"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
