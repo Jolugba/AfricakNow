@@ -16,13 +16,15 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.tinuade.africaknow.Api.ApiInterface;
 import com.tinuade.africaknow.Api.RetrofitClient;
 import com.tinuade.africaknow.Model.BaseResponse;
-import com.tinuade.africaknow.QuizAdapter;
+import com.tinuade.africaknow.adapter.QuizAdapter;
 import com.tinuade.africaknow.R;
 import com.tinuade.africaknow.ViewModel.QuestionViewModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.tinuade.africaknow.Ui.PlayGame.CURRENT_HIGH_SCORE;
 
 public class QuestionActivity extends AppCompatActivity {
 
@@ -90,6 +92,7 @@ public class QuestionActivity extends AppCompatActivity {
                         } else {
                             Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
                             intent.putExtra(EXTRA_TEXT, score);
+                            intent.putExtra(CURRENT_HIGH_SCORE, getIntent().getIntExtra(CURRENT_HIGH_SCORE, 0));
                             startActivity(intent);
                             finish();
                             // Quiz has ended, user has submitted
@@ -106,6 +109,7 @@ public class QuestionActivity extends AppCompatActivity {
                         } else {
                             Intent intent = new Intent(QuestionActivity.this, ResultActivity.class);
                             intent.putExtra(EXTRA_TEXT, score);
+                            intent.putExtra(CURRENT_HIGH_SCORE, getIntent().getIntExtra(CURRENT_HIGH_SCORE, 0));
                             startActivity(intent);
                             finish();
                         }

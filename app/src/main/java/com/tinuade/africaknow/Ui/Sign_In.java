@@ -33,6 +33,12 @@ public class Sign_In extends AppCompatActivity {
         //init firebase
         auth = FirebaseAuth.getInstance();
 
+        // Check if user is already signed in
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(this, PlayGame.class));
+            finish();
+        }
+
         //FindViewByID for widget
         mEmail = findViewById(R.id.sign_in_email);
         mPassword = findViewById(R.id.sign_in_password);
@@ -41,7 +47,6 @@ public class Sign_In extends AppCompatActivity {
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
         loadingProgressBar.setVisibility(View.INVISIBLE);
-
 
         mSignUpLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +85,5 @@ public class Sign_In extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 }
