@@ -1,4 +1,4 @@
-package com.tinuade.africaknow;
+package com.tinuade.africaknow.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tinuade.africaknow.Model.Answer;
 import com.tinuade.africaknow.Model.Question;
+import com.tinuade.africaknow.R;
 
 import java.util.List;
 

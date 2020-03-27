@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="@string/logo"
         android:src="@drawable/splash_screen_logo" />
 
@@ -22,5 +22,22 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/white_btn"
         android:fontFamily="@font/arial_bold"
+        android:padding="8dp"
         android:text="@string/play_game" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="High Scores"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/high_score_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp" />
 </LinearLayout>
