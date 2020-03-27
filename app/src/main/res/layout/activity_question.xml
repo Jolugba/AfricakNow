@@ -16,7 +16,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/arial_bold"
-        android:text="Question:"
+        android:text="@string/question"
         app:layout_constraintEnd_toStartOf="@id/current_question_textView"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/arial_bold"
-        android:text="/"
+        android:text="@string/slash"
         app:layout_constraintBottom_toBottomOf="@+id/current_question_textView"
         app:layout_constraintEnd_toStartOf="@id/total_questions_textView"
         app:layout_constraintStart_toEndOf="@+id/current_question_textView"
@@ -60,7 +60,9 @@
         android:id="@+id/option_2_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score: "
+        android:fontFamily="@font/arial_bold"
+        android:text="@string/score"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/score_textView"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,18 +73,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:fontFamily="@font/arial_bold"
+        android:text="@string/_0"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/option_2_textView"
         app:layout_constraintEnd_toStartOf="@id/textView4"
         app:layout_constraintStart_toEndOf="@id/option_2_textView"
-        app:layout_constraintTop_toTopOf="@id/option_2_textView"
-        android:text="0" />
+        app:layout_constraintTop_toTopOf="@id/option_2_textView" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Correct: "
+        android:fontFamily="@font/arial_bold"
+        android:text="@string/correct"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/correct_textView"
         app:layout_constraintStart_toEndOf="@id/score_textView"
         app:layout_constraintTop_toBottomOf="@id/option_3_textView" />
@@ -92,18 +98,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:fontFamily="@font/arial_bold"
+        android:text="@string/_0"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/textView4"
         app:layout_constraintEnd_toStartOf="@id/textView5"
         app:layout_constraintStart_toEndOf="@id/textView4"
-        app:layout_constraintTop_toTopOf="@id/textView4"
-        android:text="0" />
+        app:layout_constraintTop_toTopOf="@id/textView4" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Wrong: "
+        android:fontFamily="@font/arial_bold"
+        android:text="@string/wrong"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/wrong_textView"
         app:layout_constraintStart_toEndOf="@id/correct_textView"
         app:layout_constraintTop_toBottomOf="@id/option_3_textView" />
@@ -112,11 +122,13 @@
         android:id="@+id/wrong_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/arial_bold"
+        android:text="@string/_0"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/textView5"
-        app:layout_constraintTop_toTopOf="@id/textView5"
-        android:text="0" />
+        app:layout_constraintTop_toTopOf="@id/textView5" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
@@ -147,8 +159,9 @@
         android:layout_marginBottom="16dp"
         android:background="@color/buttonColor"
         android:fontFamily="@font/arial_bold"
-        android:text="Next"
+        android:text="@string/next"
         android:textColor="@color/textColor"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

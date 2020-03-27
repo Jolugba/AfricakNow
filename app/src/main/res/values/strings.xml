@@ -20,4 +20,14 @@
     <string name="play_game">Play Game</string>
     <string name="sign_in">Sign in</string>
     <string name="logo">logo</string>
+    <string name="high_scores">High Scores</string>
+    <string name="question">Question:</string>
+    <string name="slash">/</string>
+    <string name="score">Score:</string>
+    <string name="correct">Correct:</string>
+    <string name="wrong">Wrong:</string>
+    <string name="_0">0</string>
+    <string name="next">Next</string>
+    <string name="you_have_gotten_to_the_end_of_the_demo_version_of_this_game">YOU HAVE GOTTEN TO THE END OF THE DEMO VERSION OF THIS GAME</string>
+    <string name="africa_know_actual_game_promises_to_be_fun_and_challenging_cheers">Africa kNow Actual Game promises to be fun and challenging,Cheers!!!</string>
 </resources>

@@ -11,12 +11,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -55,20 +51,12 @@ public class Sign_Up extends AppCompatActivity {
         Button mSignUpButton = findViewById(R.id.signup);
         loadingProgressBar.setVisibility(View.INVISIBLE);
 
-        mSignInLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        mSignInLink.setOnClickListener(v -> {
 
-                Intent intent = new Intent(Sign_Up.this, Sign_In.class);
-                startActivity(intent);
-            }
+            Intent intent = new Intent(Sign_Up.this, Sign_In.class);
+            startActivity(intent);
         });
-        mSignUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signUpButton();
-            }
-        });
+        mSignUpButton.setOnClickListener(v -> signUpButton());
 
     }
 
@@ -94,45 +82,27 @@ public class Sign_Up extends AppCompatActivity {
 
 
             mAuth.createUserWithEmailAndPassword(mEmailAddress.getText().toString(), mPassword.getText().toString())
-                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                        @Override
-                        public void onSuccess(AuthResult authResult) {
-                            //save user to the database
-                            User user = new User();
-                            user.setFullName(mFullname.getText().toString());
-                            user.setEmail(mEmailAddress.getText().toString());
-                            user.setPhone(mPhonenumber.getText().toString());
+                    .addOnSuccessListener(authResult -> {
+                        //save user to the database
+                        User user = new User();
+                        user.setFullName(mFullname.getText().toString());
+                        user.setEmail(mEmailAddress.getText().toString());
+                        user.setPhone(mPhonenumber.getText().toString());
 
-                            loadingProgressBar.setVisibility(View.VISIBLE);
+                        loadingProgressBar.setVisibility(View.VISIBLE);
 
-                            //use phone as key
+                        //use phone as key
 
-                            users.child(mAuth.getCurrentUser().getUid())
-                                    .setValue(user)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Toast.makeText(Sign_Up.this, "Registration Successful", Toast.LENGTH_LONG).show();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(Sign_Up.this, "Registration Failed", Toast.LENGTH_LONG).show();
-                                        }
-                                    });
-                            loadingProgressBar.setVisibility(View.INVISIBLE);
+                        users.child(mAuth.getCurrentUser().getUid())
+                                .setValue(user)
+                                .addOnSuccessListener(aVoid -> Toast.makeText(Sign_Up.this, "Registration Successful", Toast.LENGTH_LONG).show())
+                                .addOnFailureListener(e -> Toast.makeText(Sign_Up.this, "Registration Failed", Toast.LENGTH_LONG).show());
+                        loadingProgressBar.setVisibility(View.INVISIBLE);
 
-                            startActivity(new Intent(Sign_Up.this, PlayGame.class));
-                            finish();
-                        }
+                        startActivity(new Intent(Sign_Up.this, PlayGame.class));
+                        finish();
                     })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Sign_Up.this, "Authentication Failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    });
+                    .addOnFailureListener(e -> Toast.makeText(Sign_Up.this, "Authentication Failed: " + e.getMessage(), Toast.LENGTH_LONG).show());
 
     }
 }

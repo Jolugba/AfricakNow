@@ -28,13 +28,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/arial_bold"
+        android:text="@string/high_scores"
         android:textAlignment="center"
-        android:text="High Scores"
         android:textColor="@color/textColor"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/arial_bold"
-        android:layout_marginTop="24dp"/>
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/high_score_recyclerView"

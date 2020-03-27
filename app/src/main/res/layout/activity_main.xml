@@ -29,14 +29,15 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="24dp"
-            android:fontFamily="@font/arial_bold"
             android:background="#FFF7da"
             android:drawableStart="@drawable/email"
             android:drawablePadding="12dp"
+            android:fontFamily="@font/arial_bold"
             android:hint="@string/prompt_email"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:selectAllOnFocus="true" />
 
         <EditText
@@ -54,6 +55,8 @@
             android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:padding="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,9 +72,9 @@
             android:background="@drawable/round_btn"
             android:fontFamily="@font/arial_bold"
             android:padding="10dp"
-            android:textStyle="bold"
             android:text="@string/action_sign_in"
-            android:textColor="#fff7da" />
+            android:textColor="#fff7da"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,10 +87,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/arial_bold"
-                android:textStyle="bold"
-                android:textSize="15sp"
                 android:text="@string/don_t_have_an_account"
-                android:textColor="#fff7da" />
+                android:textColor="#fff7da"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/signUpLink"
@@ -107,7 +110,6 @@
             android:id="@+id/loading"
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
-            android:outlineAmbientShadowColor="@color/buttonColor"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
 
