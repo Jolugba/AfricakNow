@@ -5,6 +5,8 @@ _Africa kNow app is a brain test mobile application_
  it comprises of Africa continent question,it helps promote the awareness of africa culture and environment,
  it was my first Android full functioning projects,It was created to test my knowledge from a coding Mentorship
  program I took part in.
+ 
+### Sample question
  ![The question activity](https://res.cloudinary.com/jolugba/image/upload/v1586047812/Screenshot_20200327-022042_t3td6l.png)
 
 ## Technologies
